@@ -10,7 +10,7 @@ public User(String name, int personalID,int age, String gender){
 	this.name = name;
 	this.personalID = personalID;
 	this.age = age;
-	this gender = gender;
+	this.gender = gender;
 }
 public String getname() {
 	return name;
