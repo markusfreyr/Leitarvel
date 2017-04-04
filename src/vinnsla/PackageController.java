@@ -1,75 +1,86 @@
 package vinnsla;
 
-import database.Database;
-import vinnsla.Package;
+
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 
 
 public class PackageController {
 	
-	private Database  gogn;
+	public ArrayList<Hotel> hotels;
 	
-	private Date date;
+	 HotelGroupMock hotelGroupMock;
+	
+	
 
 	public PackageController(){
-		
-		Database gogn = new Database();
-	}
-	
-	public List<Package> search(){
-		
-		gogn.getData1();
-		
-		List<Package> pakkar = new ArrayList<Package>();
-		
-		return pakkar;		
-		
-	}
-	
-	public List<Package> searchByQuality(int i){
-		
-		List<Package> pakkar = new ArrayList<Package>();
-		
-		return pakkar;
-	}
-	
-	public List<Package> searchByDate(Date a, Date b){
-		
-		List<Package> pakkar = new ArrayList<Package>();
-		
-		return pakkar;
-	}
 
-	public List<Package> searchBySize(int i, int k){
+		hotels = new ArrayList<Hotel>();
 		
-		List<Package> pakkar = new ArrayList<Package>();
+		hotelGroupMock = new HotelGroupMock();
 		
-		return pakkar;
 	}
 	
-	public List<Package> searchByLocation(String s){
+	
+	public  ArrayList<Hotel> searchByQuality(int i){
 		
-		List<Package> pakkar = new ArrayList<Package>();
+		ArrayList<Hotel> results = new ArrayList<Hotel>();
+	
+		results = hotelGroupMock.getHotelsByStars(i);
+		hotels = hotelGroupMock.getHotelsByStars(i);
 		
-		return pakkar;
+		
+		return results;
+		
 	}
 	
-	public List<Package> searchByprice(int low, int high){
+	public ArrayList<Hotel> searchByDate(Date a){
 		
-		List<Package> pakkar = new ArrayList<Package>();
+		ArrayList<Hotel> results = new ArrayList<Hotel>();
 		
-		return pakkar;
+		results = hotelGroupMock.getHotelsByDate(a);
+		hotels = hotelGroupMock.getHotelsByDate(a);
+		
+		return results;
 	}
 	
-	public List<Package> searchByAge(int low, int high){
+	public ArrayList<Hotel> searchByPriceRange(int low,int high){
 		
-		List<Package> pakkar = new ArrayList<Package>();
+		ArrayList<Hotel> results = new ArrayList<Hotel>();
 		
-		return pakkar;
+		results = hotelGroupMock.getHotelsByPriceRange(low, high);
+		hotels = hotelGroupMock.getHotelsByPriceRange(low, high);
+		
+		return results;
+	}
+	
+	public ArrayList<Hotel> searchByLocation(String Location){
+		
+		ArrayList<Hotel> results = new ArrayList<Hotel>();
+		
+		results = hotelGroupMock.getHotelsByLocation(Location);
+		hotels = hotelGroupMock.getHotelsByLocation(Location);
+		
+		return results;
+	}
+	
+	public ArrayList<Hotel> searchBySize(int i){
+		
+		ArrayList<Hotel> results = new ArrayList<Hotel>();
+		
+		results = hotelGroupMock.getHotelsBySize(i);
+		hotels = hotelGroupMock.getHotelsBySize(i);
+		
+		return results;
+	}
+	
+	
+	public static void main(String[] args){
+		
+	
+		
 	}
 	
 		
