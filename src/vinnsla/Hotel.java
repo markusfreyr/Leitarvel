@@ -2,13 +2,13 @@ package vinnsla;
 import java.util.Date;
 public class Hotel {
 
-	private Date Date;
+	private Date[] Date;
 	private int price;
 	private int stars;
 	private String location;
 	private int size;
 	
-	public Hotel(Date Date, int price, int stars, String location, int size){
+	public Hotel(Date[] Date, int price, int stars, String location, int size){
 		this.Date=Date;
 		this.price=price;
 		this.stars=stars;
@@ -18,11 +18,11 @@ public class Hotel {
 		
 	}
 	
-	public Date getDate(){
+	public Date[] getDate(){
 		return Date;
 	}
-	public void setDate(){
-		
+	public void setDate(Date[] a){
+		Date = a;
 	}
 	public int getPrice(){
 		return price;
